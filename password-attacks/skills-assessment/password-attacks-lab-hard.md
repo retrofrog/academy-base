@@ -129,3 +129,10 @@ lets rdp as administrator
 xfreerdp /v:10.129.202.222 /u:Administrator /p:'Liverp00l8!' /cert-ignore /dynamic-resolution
 HTB{PWcr4ck1ngokokok}
 ```
+
+To close the BitLocker partition properly we need to first `umount` then use `cryptsetup bitlkClose` for closing the partition
+
+```bash
+sudo umount /mnt/hardlab
+sudo cryptsetup bitlkClose PasswordHard                                         
+```
