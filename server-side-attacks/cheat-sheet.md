@@ -1,30 +1,6 @@
 # Cheat Sheet
 
-\+ 5 Read the content of 'flag.txt' through a server-side attack without registering an account and submit its content as your answer. Answer format: HTB{String}
-
-**Table of Contents**
-
-**Abusing Intermediary Applications**
-
-**Server-Side Request Forgery (SSRF)**
-
-**Server-Side Includes (SSI) Injection**
-
-**Edge-Side Includes (ESI) Injection**
-
-**Server-Side Template Injections**
-
-**Extensible Stylesheet Language Transformations Server-Side Injections**
-
-**Skills Assessment**
-
-**My Workstation**
-
-OFFLINE
-
-/ 1 spawns left
-
-&#x20; **Cheat Sheet**
+**Cheat Sheet**
 
 The cheat sheet is a useful command reference for this module.
 
