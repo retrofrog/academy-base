@@ -145,3 +145,11 @@ Find below some good report examples selected by HackerOne:
 * [Cross-site Scripting (XSS) on HackerOne careers page](https://hackerone.com/reports/474656)
 
 Please refer to the [Submitting Reports](https://docs.hackerone.com/hackers/submitting-reports.html) section of HackerOne's docs portal for the actual process a bug bounty hunter has to follow to submit a bug report.
+
+**Questions**
+
+Which base metric value of the base score considers that attackers can only exploit a vulnerability if they reside in the same physical or logical network as the target host/application?
+
+```
+Adjacent
+```

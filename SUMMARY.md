@@ -557,3 +557,7 @@
   * [Privileged Access](active-directory-enumeration-and-attacks/privileged-access.md)
 * [Bug Bounty Hunting Process](bug-bounty-hunting-process/README.md)
   * [Writing a Good Report](bug-bounty-hunting-process/writing-a-good-report.md)
+  * [Interacting with Organizations/BBP Hosts](bug-bounty-hunting-process/interacting-with-organizations-bbp-hosts.md)
+  * [Example 1: Reporting Stored XSS](bug-bounty-hunting-process/example-1-reporting-stored-xss.md)
+  * [Example 2: Reporting CSRF](bug-bounty-hunting-process/example-2-reporting-csrf.md)
+  * [Example 3: Reporting RCE](bug-bounty-hunting-process/example-3-reporting-rce.md)
