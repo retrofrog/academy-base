@@ -159,5 +159,9 @@ This section also shows the dangers of password re-use and the kinds of data we 
 Find your way into the osTicket instance and submit the password sent from the Customer Support Agent to the customer Charles Smithson .
 
 ```bash
+# go to http://support.inlanefreight.local/scp
+# login using cred provided in the source material 
+# kevin@inlanefreight.local:Fish1ng_s3ason!
+# after successfull login, go to http://support.inlanefreight.local/scp/tickets.php?id=7
 Inlane_welcome!
 ```
